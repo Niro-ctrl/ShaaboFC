@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="U9JTqtbei9_Vj0m_mhd-mOS66yHokaeVlNBfLV8uMko" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHAABO FC | THE COMPLETE COMMAND</title>
@@ -38,6 +37,25 @@
         .j-name-view { position: absolute; top: 40px; font-size: 18px; font-weight: 900; letter-spacing: 3px; }
         .j-num-view { margin-top: 110px; font-size: 140px; font-weight: 900; font-family: 'Oswald'; line-height: 1; }
 
+        /* NEW SQUAD CARD STYLING */
+        .squad-card { 
+            position: relative; 
+            height: 450px; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+        .squad-card:hover { border-color: var(--blue); transform: translateY(-10px); }
+        .squad-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
+        .squad-card:hover img { filter: grayscale(0%); scale: 1.05; }
+        .card-overlay { 
+            position: absolute; inset: 0; 
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 15%, transparent 60%); 
+            padding: 25px; display: flex; flex-direction: column; justify-content: flex-end;
+        }
+
         @media (max-width: 768px) {
             .player-circle { width: 35px; height: 35px; }
             .jersey-box { width: 260px; height: 350px; }
@@ -53,7 +71,8 @@
         </div>
         <div class="hidden lg:flex space-x-12 text-[10px] font-black uppercase tracking-[0.4em]">
             <button onclick="navigate('home')" class="hover:text-blue-500 transition">Genesis</button>
-            <button onclick="navigate('news')" class="hover:text-blue-500 transition">Newsroom</button>
+            <button onclick="navigate('potw')" class="hover:text-blue-500 transition">Elite</button>
+            <button onclick="navigate('squad')" class="hover:text-blue-500 transition">Squad</button> <button onclick="navigate('news')" class="hover:text-blue-500 transition">Newsroom</button>
             <button onclick="navigate('matchday')" class="hover:text-blue-500 transition">Live Hub</button>
             <button onclick="navigate('tactics')" class="hover:text-blue-500 transition">Tactics</button>
             <button onclick="navigate('armory')" class="hover:text-blue-500 transition">Armory</button>
@@ -95,24 +114,167 @@
         </section>
     </main>
 
+   <main id="squad" class="page-view pt-32 px-10 pb-24">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-8xl font-black italic oswald mb-16 uppercase tracking-tighter">THE <span class="text-blue-600">XI COMMAND</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="squad-card">
+                    <img src="player1.png" alt="Player 1" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+1'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">MOHAMED / 1</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Shaabo</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player2.jpeg" alt="Player 2" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+2'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">DABDABA/ 2</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Iron Wall</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player3.jpeg" alt="Player 3" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+3'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">ABDIKARIIM / 3</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Titan</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player4.jpeg" alt="Player 4" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+4'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">DUE / 4</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Sonic</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player5.jpeg" alt="Player 5" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+5'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">ABDILAAHI / 5</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Engine</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player6.jpeg" alt="Player 6" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+6'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">KUCUS / 6</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Maestro</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player7.jpeg" alt="Player 7" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+7'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">XUXAALE / 7</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Wizard</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player8.jpeg" alt="Player 8" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+8'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">MUSTAFA / 8</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Pulse</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player9.jpeg" alt="Player 9" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+9'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">ENGINEER / 9</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Ghost</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player10.jpeg" alt="Player 10" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+10'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">D.J / 10</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">Sniper</h3>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <img src="player11.jpeg" alt="Player 11" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+11'">
+                    <div class="card-overlay">
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">Bashiir / 11</span>
+                        <h3 class="oswald font-black text-4xl italic uppercase">The Beast</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <main id="potw" class="page-view pt-32 px-10 pb-24">
+        <div class="max-w-6xl mx-auto">
+            <div class="relative w-full h-auto min-h-[600px] bg-zinc-900/50 rounded-[60px] overflow-hidden border border-white/5 flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 h-full min-h-[400px]">
+                    <img src="potw_hero.jpeg" alt="Player of the Week" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+                </div>
+                <div class="w-full lg:w-1/2 p-12 lg:p-20">
+                    <span class="text-blue-600 font-black tracking-[0.5em] uppercase text-xs mb-4 block">Weekly Achievement</span>
+                    <h2 class="text-6xl md:text-8xl font-black oswald italic leading-none mb-10">PLAYER<br/>OF THE <span class="text-blue-600">WEEK</span></h2>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Position</p>
+                            <p class="text-2xl font-black oswald italic">STRIKER</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Goals Scored</p>
+                            <p class="text-2xl font-black oswald italic">0</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Pass Accuracy</p>
+                            <p class="text-2xl font-black oswald italic">92%</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Match Rating</p>
+                            <p class="text-2xl font-black oswald italic text-blue-500">9.8</p>
+                        </div>
+                    </div>
+
+                    <button class="bg-white text-black px-10 py-4 font-black uppercase text-[10px] rounded-full hover:bg-blue-600 hover:text-white transition">View Career Stats</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <main id="news" class="page-view pt-32 px-10 pb-24">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-6xl md:text-8xl font-black italic oswald mb-16 uppercase">Newsroom</h2>
-            <div class="bg-zinc-900/40 rounded-[40px] border border-red-500/20 p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-                <div class="w-full md:w-1/3">
-                    <img src="striker.jpeg" alt="Striker Placeholder" class="w-full aspect-[3/4] object-cover rounded-3xl border-2 border-white/10">
-                </div>
-                <div class="flex-1">
-                    <span class="bg-red-600 px-4 py-1 rounded-full text-[10px] font-black uppercase mb-6 inline-block">Medical Report</span>
-                    <h3 class="text-5xl font-black oswald italic mb-6">MAJOR BLOW: PRIMARY player OUT</h3>
-                    <p class="text-zinc-400 text-xl leading-relaxed mb-8">Clinical testing confirms the striker will be sidelined for **3 months** due to recurring knee problems. The medical department has initiated a 12-week rehabilitation protocol.</p>
-                    <div class="space-y-4">
-                        <div class="flex justify-between text-[10px] font-black uppercase tracking-widest">
-                            <span>Rehab Progress</span>
-                            <span class="text-blue-500">Day 68 / Phase 12</span>
+            
+            <div class="flex flex-col gap-12">
+                <div class="bg-zinc-900/40 rounded-[40px] border border-red-500/20 p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-full md:w-1/3">
+                        <img src="striker.jpeg" alt="Striker Placeholder" class="w-full aspect-[3/4] object-cover rounded-3xl border-2 border-white/10">
+                    </div>
+                    <div class="flex-1">
+                        <span class="bg-red-600 px-4 py-1 rounded-full text-[10px] font-black uppercase mb-6 inline-block">Medical Report</span>
+                        <h3 class="text-5xl font-black oswald italic mb-6">MAJOR BLOW: PRIMARY player OUT</h3>
+                        <p class="text-zinc-400 text-xl leading-relaxed mb-8">Clinical testing confirms the striker will be sidelined for **3 months** due to recurring knee problems. The medical department has initiated a 12-week rehabilitation protocol.</p>
+                        <div class="space-y-4">
+                            <div class="flex justify-between text-[10px] font-black uppercase tracking-widest">
+                                <span>Rehab Progress</span>
+                                <span class="text-blue-500">Day 68 / Phase 12</span>
+                            </div>
+                            <div class="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]" style="width: 70%"></div>
+                            </div>
                         </div>
-                        <div class="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/40 rounded-[40px] border border-red-500/20 p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-full md:w-1/3">
+                        <img src="midfielder.jpeg" alt="Midfielder Placeholder" class="w-full aspect-[3/4] object-cover rounded-3xl border-2 border-white/10 grayscale">
+                    </div>
+                    <div class="flex-1">
+                        <span class="bg-red-600 px-4 py-1 rounded-full text-[10px] font-black uppercase mb-6 inline-block">Medical Report</span>
+                        <h3 class="text-5xl font-black oswald italic mb-6">CRITICAL LOSS: midfielder INJURED</h3>
+                        <p class="text-zinc-400 text-xl leading-relaxed mb-8">Hemorrhoids. The medical team estimates a **10 days** recovery window before full contact return.</p>
+                        <div class="space-y-4">
+                            <div class="flex justify-between text-[10px] font-black uppercase tracking-widest">
+                                <span>Recovery Status</span>
+                                <span class="text-blue-500">Day 4 / Initial Phase</span>
+                            </div>
+                            <div class="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]" style="width: 15%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,5 +452,4 @@
         }
     </script>
 </body>
-
 </html>
