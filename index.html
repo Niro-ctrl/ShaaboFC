@@ -150,7 +150,7 @@
                 <div class="squad-card">
                     <img src="player5.jpeg" alt="Player 5" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+5'">
                     <div class="card-overlay">
-                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">xuxaale / 5</span>
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">ABDILAAHI / 5</span>
                         <h3 class="oswald font-black text-4xl italic uppercase">Engine</h3>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                 <div class="squad-card">
                     <img src="player7.jpeg" alt="Player 7" onerror="this.src='https://placehold.co/600x800/111/444?text=PLAYER+7'">
                     <div class="card-overlay">
-                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">totti / 7</span>
+                        <span class="text-blue-500 font-black text-[10px] tracking-widest uppercase">XUXAALE / 7</span>
                         <h3 class="oswald font-black text-4xl italic uppercase">Wizard</h3>
                     </div>
                 </div>
@@ -451,8 +451,32 @@
             setTimeout(() => { hud.style.opacity = '0'; hud.style.transform = 'translateY(20px)'; }, 3000);
         }
     </script>
+    <script>
+    function resizePitch() {
+        const pitch = document.querySelector('.pitch-canvas');
+        if (!pitch) return;
+
+        // Full width, but max height is viewport height minus nav
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const maxHeight = window.innerHeight - navHeight - 20; // small margin
+        const width = window.innerWidth - 20; // small margin
+        const aspectRatio = 16 / 10;
+
+        let newWidth = width;
+        let newHeight = width / aspectRatio;
+
+        if (newHeight > maxHeight) {
+            newHeight = maxHeight;
+            newWidth = maxHeight * aspectRatio;
+        }
+
+        pitch.style.width = newWidth + 'px';
+        pitch.style.height = newHeight + 'px';
+    }
+
+    window.addEventListener('resize', resizePitch);
+    window.addEventListener('load', resizePitch);
+</script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </body>
 </html>
-
-
-
